@@ -4,7 +4,7 @@
 let root = document.getElementById("root");
 
 let nav = document.createElement("nav");
-let navLogo = document.createElement("h1");
+let navLogo = document.createElement("h2");
 navLogo.innerText = "Logo";
 nav.append(navLogo);
 
@@ -45,7 +45,7 @@ function render() {
         }
     }
 
-    //Ifall man inte är inloggad
+    //Annars är man inte är inloggad
     else {
 
         nav.innerHTML = "";
@@ -60,14 +60,14 @@ function render() {
         inputPassword.placeholder = "Password";
 
         let loginButton = document.createElement("button");
-        loginButton.innerText = "Log in";
+        loginButton.innerText = "Login";
         loginButton.addEventListener("click", login);
 
-        let welcomeFirst = document.createElement("h1")
-        welcomeFirst.innerText = "Please login";
+        let loginText = document.createElement("h1")
+        loginText.innerText = "Please login";
 
         nav.append(navLogo, inputUsername, inputPassword, loginButton);
-        main.append(welcomeFirst);
+        main.append(loginText);
 
         //Funktion för att logga in
         function login() {
@@ -82,10 +82,9 @@ function render() {
             }
 
             else {
-
                 main.innerHTML = "";
 
-                let failText = document.createElement("h1");
+                let failText = document.createElement("h2");
                 failText.innerText = "Wrong username or password. Please try again!"
 
                 main.append(failText);
